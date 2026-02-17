@@ -61,6 +61,7 @@ def signup_for_activity(activity_name: str, email: str):
 
     # Get the specific activity
     activity = activities[activity_name]
+    tiv
 
     # Add student
     activity["participants"].append(email)
