@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <div class="participants">
             <strong>Participants:</strong>
-            ${details.participants && details.participants.length > 0 ? `
+            ${details.participants.length > 0 ? `
               <ul>
                 ${details.participants.map(p => `<li>${p}</li>`).join("")}
               </ul>
@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
         signupForm.reset();
+        // refresh list after signup
         fetchActivities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
